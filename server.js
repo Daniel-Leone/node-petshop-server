@@ -21,7 +21,7 @@ app.use('/public', express.static('public'));
 
 app.use('/home', productRoutes)
 
-mongoose.connect('mongodb+srv://Daniel:firstmongodb@cluster0.56wbh.mongodb.net/test')
+mongoose.connect(process.env.DB_URL)
 
 const connection = mongoose.connection;
 connection.once('open', ()=> {
